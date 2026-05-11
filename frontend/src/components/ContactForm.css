@@ -1,0 +1,39 @@
+.contact-form-wrapper {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--secondary-color);
+}
+
+.form-heading {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-subheading {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.submit-btn {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.form-error {
+  color: var(--danger);
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 25px;
+  }
+}
