@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['18.206.180.123', 'mbbsnation.com', 'www.mbbsnation.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://mbbsnation.com",
+    "https://www.mbbsnation.com",
+]
+
 
 # Application definition
 
@@ -51,6 +56,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://www.mbbsnation.com",
+    "https://mbbsnation.com",
 ]
 
 ROOT_URLCONF = 'core.urls'
