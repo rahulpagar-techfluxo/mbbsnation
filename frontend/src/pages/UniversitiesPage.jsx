@@ -8,7 +8,7 @@ const UniversitiesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/universities/')
+    axios.get('https://mbbsnation.com/api/universities/')
       .then(response => {
         setUniversities(response.data);
         setLoading(false);

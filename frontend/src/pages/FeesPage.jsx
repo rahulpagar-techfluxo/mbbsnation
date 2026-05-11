@@ -7,7 +7,7 @@ const FeesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/universities/')
+    axios.get('https://mbbsnation.com/api/universities/')
       .then(response => {
         setUniversities(response.data);
         setLoading(false);
@@ -22,7 +22,7 @@ const FeesPage = () => {
     <div className="page-wrapper">
       <div className="page-header">
         <div className="container">
-          <motion.h1 initial={{y: -20, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{duration: 0.5}}>MBBS Fees Structure</motion.h1>
+          <motion.h1 initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>MBBS Fees Structure</motion.h1>
           <p>Transparent Pricing • No Hidden Costs</p>
         </div>
       </div>

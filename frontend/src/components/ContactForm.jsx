@@ -21,7 +21,7 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus('Submitting...');
     try {
-      await axios.post('http://127.0.0.1:8000/api/leads/', formData);
+      await axios.post('https://mbbsnation.com/api/leads/', formData);
       setStatus('Success');
       setFormData({
         name: '',
@@ -42,28 +42,28 @@ const ContactForm = () => {
     <div className="contact-form-wrapper" id="contact-section">
       <h3 className="form-heading">Want MBBS Admission Without Consultancy Fees?</h3>
       <p className="form-subheading">Get Free Guidance from our experts</p>
-      
+
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="name">Student Name *</label>
           <input type="text" id="name" name="name" className="form-control" value={formData.name} onChange={handleChange} required />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="mobile_number">Mobile Number *</label>
           <input type="tel" id="mobile_number" name="mobile_number" className="form-control" value={formData.mobile_number} onChange={handleChange} required />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="email">Email *</label>
           <input type="email" id="email" name="email" className="form-control" value={formData.email} onChange={handleChange} required />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="neet_score">NEET Score (if appeared)</label>
           <input type="number" id="neet_score" name="neet_score" className="form-control" value={formData.neet_score} onChange={handleChange} />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="preferred_country">Preferred Country</label>
           <select id="preferred_country" name="preferred_country" className="form-control" value={formData.preferred_country} onChange={handleChange}>
@@ -76,14 +76,14 @@ const ContactForm = () => {
             <option value="Not Sure">Not Sure yet</option>
           </select>
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="message">Message</label>
           <textarea id="message" name="message" className="form-control" rows="4" value={formData.message} onChange={handleChange}></textarea>
         </div>
-        
+
         <button type="submit" className="btn btn-primary submit-btn">Get Free Guidance</button>
-        
+
         {status === 'Success' && <div className="toast">Your inquiry has been submitted! We will contact you soon.</div>}
         {status && status !== 'Success' && status !== 'Submitting...' && <div className="form-error">{status}</div>}
       </form>

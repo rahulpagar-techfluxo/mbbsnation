@@ -13,7 +13,7 @@ function App() {
   const [siteContent, setSiteContent] = useState(null);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/site-content/')
+    axios.get('https://mbbsnation.com/api/site-content/')
       .then(response => setSiteContent(response.data))
       .catch(error => console.error("Error fetching site content:", error));
   }, []);
@@ -22,7 +22,7 @@ function App() {
     <Router>
       <div className="App">
         <Header content={siteContent} />
-        
+
         <main>
           <Routes>
             <Route path="/" element={<HomePage content={siteContent} />} />
@@ -31,14 +31,14 @@ function App() {
             <Route path="/admission-process" element={<AdmissionProcessPage />} />
           </Routes>
         </main>
-        
+
         <Footer content={siteContent} />
 
         {siteContent && (
-          <a 
-            href={`https://wa.me/${siteContent.whatsapp_number}`} 
-            className="floating-whatsapp" 
-            target="_blank" 
+          <a
+            href={`https://wa.me/${siteContent.whatsapp_number}`}
+            className="floating-whatsapp"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with us on WhatsApp"
           >
