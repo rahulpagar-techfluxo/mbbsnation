@@ -13,7 +13,7 @@ function App() {
   const [siteContent, setSiteContent] = useState(null);
 
   useEffect(() => {
-    axios.get('https://mbbsnation.com/api/site-content/')
+    axios.get('/api/site-content/')
       .then(response => setSiteContent(response.data))
       .catch(error => console.error("Error fetching site content:", error));
   }, []);

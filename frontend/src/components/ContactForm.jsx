@@ -21,7 +21,7 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus('Submitting...');
     try {
-      await axios.post('https://mbbsnation.com/api/leads/', formData);
+      await axios.post('/api/leads/', formData);
       setStatus('Success');
       setFormData({
         name: '',
