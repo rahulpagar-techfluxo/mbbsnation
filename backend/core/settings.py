@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^c*l3kvr-r=c=^!vevm4usl8#3tbo#vcw+f#v&5j#(lok1=&_5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.206.180.123', 'mbbsnation.com', 'www.mbbsnation.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '18.206.180.123', 'mbbsnation.com', 'www.mbbsnation.com']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://mbbsnation.com",
