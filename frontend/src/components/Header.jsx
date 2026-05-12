@@ -16,11 +16,9 @@ const Header = ({ content }) => {
             <span><MapPin size={16} /> Direct Admission Experts</span>
           </div>
           <div className="social-links">
-            {content?.instagram_link && (
-              <a href={content.instagram_link} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Camera size={18} />
-              </a>
-            )}
+            <a href={content?.instagram_link || "https://instagram.com/mbbsnation"} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'inherit', textDecoration: 'none' }}>
+              <Camera size={18} /> <span style={{fontSize: '14px', fontWeight: '500'}}>@mbbsnation</span>
+            </a>
           </div>
         </div>
       </div>

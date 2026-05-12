@@ -27,7 +27,7 @@ const Footer = ({ content }) => {
           <ul>
             <li><Phone size={18} /> <a href={`tel:${content?.phone_number || "+919876543210"}`}>{content?.phone_number || "+91 98765 43210"}</a></li>
             <li><Mail size={18} /> <a href={`mailto:${content?.email || "info@mbbsnation.com"}`}>{content?.email || "info@mbbsnation.com"}</a></li>
-            {content?.instagram_link && <li><Camera size={18} /> <a href={content.instagram_link} target="_blank" rel="noopener noreferrer">@mbbsnation</a></li>}
+            <li><Camera size={18} /> <a href={content?.instagram_link || "https://instagram.com/mbbsnation"} target="_blank" rel="noopener noreferrer">@mbbsnation</a></li>
             <li><MapPin size={18} /> {content?.address || "New Delhi, India"}</li>
           </ul>
         </div>
