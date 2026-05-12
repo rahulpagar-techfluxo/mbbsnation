@@ -18,10 +18,6 @@ class UniversityImageInline(admin.TabularInline):
 
 @admin.register(University)
 class UniversityAdmin(admin.ModelAdmin):
-    list_display = ('name', 'country', 'total_fees', 'is_top_destination')
-    list_filter = ('country', 'is_top_destination')
-    search_fields = ('name', 'country')
-    inlines = [UniversityImageInline]
     fields = (
         "name",
         "country",
