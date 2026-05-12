@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import UniversitiesPage from './pages/UniversitiesPage';
 import FeesPage from './pages/FeesPage';
 import AdmissionProcessPage from './pages/AdmissionProcessPage';
+import UniversityDetailsPage from './pages/UniversityDetailsPage';
 import { MessageCircle } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage content={siteContent} />} />
             <Route path="/universities" element={<UniversitiesPage />} />
+            <Route path="/universities/:id" element={<UniversityDetailsPage />} />
             <Route path="/fees" element={<FeesPage />} />
             <Route path="/admission-process" element={<AdmissionProcessPage />} />
           </Routes>

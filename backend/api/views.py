@@ -19,3 +19,7 @@ class SiteContentView(APIView):
 class UniversityListView(generics.ListAPIView):
     queryset = University.objects.all().order_by('id')
     serializer_class = UniversitySerializer
+
+class UniversityDetailView(generics.RetrieveAPIView):
+    queryset = University.objects.all()
+    serializer_class = UniversitySerializer

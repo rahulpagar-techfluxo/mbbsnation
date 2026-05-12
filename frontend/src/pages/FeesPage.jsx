@@ -9,7 +9,8 @@ const FeesPage = () => {
   useEffect(() => {
     axios.get('/api/universities/')
       .then(response => {
-        setUniversities(response.data);
+        const data = response.data;
+        setUniversities(Array.isArray(data) ? data : (data.results || []));
         setLoading(false);
       })
       .catch(error => {

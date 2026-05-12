@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Star } from 'lucide-react';
 import axios from 'axios';
@@ -10,7 +11,8 @@ const UniversitiesPage = () => {
   useEffect(() => {
     axios.get('/api/universities/')
       .then(response => {
-        setUniversities(response.data);
+        const data = response.data;
+        setUniversities(Array.isArray(data) ? data : (data.results || []));
         setLoading(false);
       })
       .catch(error => {
@@ -50,15 +52,17 @@ const UniversitiesPage = () => {
                     transition={{ delay: index * 0.05 % 0.5 }}
                     style={{ overflow: 'hidden', padding: 0 }}
                   >
-                    {uni.image ? (
-                      <div style={{ width: '100%', height: '150px', backgroundImage: `url(${uni.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-                    ) : (
-                      <div style={{ width: '100%', height: '150px', backgroundColor: '#e9ecef', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>No Image available</div>
-                    )}
-                    <div style={{ padding: '20px' }}>
-                      <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>{uni.name}</h4>
-                      <p style={{ color: '#666', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}><MapPin size={14} /> {uni.country}</p>
-                    </div>
+                    <Link to={`/universities/${uni.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                      {uni.image ? (
+                        <div style={{ width: '100%', height: '150px', backgroundImage: `url(${uni.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                      ) : (
+                        <div style={{ width: '100%', height: '150px', backgroundColor: '#e9ecef', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>No Image available</div>
+                      )}
+                      <div style={{ padding: '20px' }}>
+                        <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>{uni.name}</h4>
+                        <p style={{ color: '#666', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}><MapPin size={14} /> {uni.country}</p>
+                      </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -77,15 +81,17 @@ const UniversitiesPage = () => {
                       viewport={{ once: true }}
                       style={{ overflow: 'hidden', padding: 0 }}
                     >
-                      {uni.image ? (
-                        <div style={{ width: '100%', height: '150px', backgroundImage: `url(${uni.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-                      ) : (
-                        <div style={{ width: '100%', height: '150px', backgroundColor: '#e9ecef', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>No Image available</div>
-                      )}
-                      <div style={{ padding: '20px' }}>
-                        <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>{uni.name}</h4>
-                        <p style={{ color: '#666', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}><MapPin size={14} /> {uni.country}</p>
-                      </div>
+                      <Link to={`/universities/${uni.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                        {uni.image ? (
+                          <div style={{ width: '100%', height: '150px', backgroundImage: `url(${uni.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                        ) : (
+                          <div style={{ width: '100%', height: '150px', backgroundColor: '#e9ecef', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>No Image available</div>
+                        )}
+                        <div style={{ padding: '20px' }}>
+                          <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>{uni.name}</h4>
+                          <p style={{ color: '#666', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}><MapPin size={14} /> {uni.country}</p>
+                        </div>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>

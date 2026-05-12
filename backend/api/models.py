@@ -31,9 +31,22 @@ class University(models.Model):
     duration = models.CharField(max_length=50, default="6 Years")
     image = models.ImageField(upload_to='universities/', blank=True, null=True)
     is_top_destination = models.BooleanField(default=False, help_text="Show on homepage as top destination country card?")
+    
+    about = models.TextField(blank=True, null=True, help_text="Detailed overview of the university")
+    student_facilities = models.TextField(blank=True, null=True, help_text="Details about hostels, mess, sports, etc. You can use simple text or HTML list.")
+    intake = models.CharField(max_length=100, default="Sept / Feb", help_text="Admission intake months, e.g. Sept / Feb")
+    recognition = models.CharField(max_length=255, default="WHO, NMC", help_text="Recognition bodies, e.g. WHO, NMC, ECFMG")
 
     def __str__(self):
         return self.name
+
+class UniversityImage(models.Model):
+    university = models.ForeignKey(University, related_name='gallery_images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='universities/gallery/')
+    caption = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return f"Image for {self.university.name}"
 
 class Lead(models.Model):
     name = models.CharField(max_length=255)

@@ -1,0 +1,244 @@
+.uni-details-page {
+  width: 100%;
+}
+
+.uni-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.uni-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+.uni-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+.uni-hero-content h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.uni-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+}
+
+.uni-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uni-content-wrapper {
+  padding: 60px 0;
+}
+
+.uni-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.uni-main-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.uni-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.uni-stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uni-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.uni-stat-icon {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uni-stat-info h4 {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.uni-stat-info p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.uni-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 40px;
+}
+
+.uni-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.uni-gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  aspect-ratio: 4/3;
+}
+
+.uni-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.uni-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.uni-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+}
+
+.uni-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.uni-apply-card {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 16px;
+  padding: 30px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+.uni-apply-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.uni-apply-card p {
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.uni-apply-card .btn {
+  width: 100%;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 15px;
+}
+
+.uni-apply-card .btn:hover {
+  background: #f8fafc;
+  transform: scale(1.02);
+}
+
+.uni-highlights {
+  margin-top: 30px;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.uni-highlights h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.uni-highlight-list {
+  list-style: none;
+}
+
+.uni-highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #475569;
+}
+
+.uni-highlight-list li .icon {
+  color: #10b981;
+}
+
+@media (max-width: 992px) {
+  .uni-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .uni-hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
