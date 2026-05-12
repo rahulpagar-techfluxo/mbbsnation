@@ -8,6 +8,7 @@ import UniversitiesPage from './pages/UniversitiesPage';
 import FeesPage from './pages/FeesPage';
 import AdmissionProcessPage from './pages/AdmissionProcessPage';
 import { MessageCircle } from 'lucide-react';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [siteContent, setSiteContent] = useState(null);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header content={siteContent} />
 
