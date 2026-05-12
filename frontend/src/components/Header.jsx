@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Camera, MapPin } from 'lucide-react';
+import { Phone, Camera, MapPin, Menu, X } from 'lucide-react';
 import './Header.css';
 
 const Header = ({ content }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <header className="main-header">
       <div className="top-bar">
@@ -25,13 +28,21 @@ const Header = ({ content }) => {
         <Link to="/" className="logo">
           MBBS<span className="logo-accent">Nation</span>.com
         </Link>
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/universities">Universities</Link></li>
-          <li><Link to="/fees">MBBS Fees</Link></li>
-          <li><Link to="/admission-process">Admission Process</Link></li>
+        
+        <div className="mobile-menu-icon" onClick={toggleMenu}>
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </div>
+
+        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+          <li><Link to="/universities" onClick={toggleMenu}>Universities</Link></li>
+          <li><Link to="/fees" onClick={toggleMenu}>MBBS Fees</Link></li>
+          <li><Link to="/admission-process" onClick={toggleMenu}>Admission Process</Link></li>
+          <li className="mobile-only-btn">
+            <a href="/#contact-section" className="btn btn-secondary" onClick={toggleMenu}>Apply Now</a>
+          </li>
         </ul>
-        <a href="/#contact-section" className="btn btn-secondary">Apply Now</a>
+        <a href="/#contact-section" className="btn btn-secondary desktop-only-btn">Apply Now</a>
       </nav>
     </header>
   );

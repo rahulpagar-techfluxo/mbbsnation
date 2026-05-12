@@ -39,7 +39,7 @@ const UniversitiesPage = () => {
             
             <section>
               <h2 className="section-title" style={{ textAlign: 'left', marginLeft: '0', transform: 'none' }}>Top Recommended Universities</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', marginTop: '30px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginTop: '30px' }}>
                 {topUniversities.map((uni, index) => (
                   <motion.div 
                     key={uni.id} 
@@ -67,7 +67,7 @@ const UniversitiesPage = () => {
             {otherUniversities.length > 0 && (
               <section style={{ marginTop: '40px' }}>
                 <h2 className="section-title" style={{ textAlign: 'left', marginLeft: '0', transform: 'none' }}>Additional Universities</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', marginTop: '30px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginTop: '30px' }}>
                   {otherUniversities.map((uni, index) => (
                     <motion.div 
                       key={uni.id} 
