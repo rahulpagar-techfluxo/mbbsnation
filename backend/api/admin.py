@@ -24,8 +24,14 @@ class UniversityAdmin(admin.ModelAdmin):
     inlines = [UniversityImageInline]
     fields = (
         "name",
-        "about_university",
+        "country",
+        "total_fees",
+        "medium",
+        "duration",
+        "image",
+        "is_top_destination",
+        "about",
         "student_facilities",
-        "recognition",
         "intake",
+        "recognition",
     )
